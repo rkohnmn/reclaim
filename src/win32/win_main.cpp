@@ -4,6 +4,7 @@
 #define NOMINMAX
 #endif
 #include <windows.h>
+#include <unknwn.h>
 #include <commctrl.h>
 #include <gdiplus.h>
 #include <shellapi.h>

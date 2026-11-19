@@ -50,7 +50,7 @@ if(WIN32)
         comdlg32
         advapi32
     )
-    target_compile_definitions(Reclaim PRIVATE UNICODE _UNICODE WIN32_LEAN_AND_MEAN)
+    target_compile_definitions(Reclaim PRIVATE UNICODE _UNICODE)
     if(MSVC)
         target_compile_options(Reclaim PRIVATE /W4 /utf-8 /O2)
     else()

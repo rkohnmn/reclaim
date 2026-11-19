@@ -6,6 +6,7 @@
 #define NOMINMAX
 #endif
 #include <windows.h>
+#include <unknwn.h>
 #include <dwmapi.h>
 #include <gdiplus.h>
 

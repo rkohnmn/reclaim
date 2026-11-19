@@ -6,6 +6,7 @@
 #define NOMINMAX
 #endif
 #include <windows.h>
+#include <unknwn.h>
 
 #include <atomic>
 #include <filesystem>
