@@ -154,7 +154,7 @@ ctest --test-dir build -C Release --output-on-failure
 Compile `installer/setup.iss` after building to generate `Reclaim-1.1.0-Setup-x64.exe` with an optional desktop shortcut and per-user Explorer context menu.
 
 **Automated GitHub Releases:**
-Push to GitHub to run `.github/workflows/release-windows.yml`, which compiles `Reclaim.exe`, runs `ctest`, and packages `Reclaim-1.1.0-win64-portable.zip` on `windows-latest`.
+Push to GitHub to run `.github/workflows/release-windows.yml`, which compiles `Reclaim.exe`, runs `ctest`, and packages `Reclaim-1.1.0-win64-portable.zip` on `windows-2022`.
 
 ### Linux (Core Engine, CLI & Sanitizer Verification)
 
