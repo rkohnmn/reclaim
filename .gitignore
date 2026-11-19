@@ -1,0 +1,23 @@
+# Build artifacts
+build/
+dist/
+out/
+*.obj
+*.o
+*.res
+*.pdb
+*.ilk
+*.exe
+!assets/*.ico
+
+# IDE & OS metadata
+.vs/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated test outputs
+*.tmp
+*.manifest
+reclaim_audit_report.html

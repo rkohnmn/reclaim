@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "id": "browser_cache",
+      "name": "Browser & Electron App Caches",
+      "description": "HTTP cache, code cache, and GPU cache from Chromium, Edge, Firefox, Discord, Slack, and VS Code. Automatically rebuilt on launch.",
+      "category": "BrowserCache",
+      "safety": "Safe",
+      "dir_name_matches": ["cache_data", "code cache", "gpucache", "dawngraphitecache", "dawnd3dcache", "service worker", "cache2"],
+      "path_substrings": ["/google/chrome/user data/", "/microsoft/edge/user data/", "/mozilla/firefox/profiles/", "/discord/cache", "/slack/cache"],
+      "extensions": [],
+      "min_size_bytes": 0,
+      "default_selected": true
+    },
+    {
+      "id": "shader_cache",
+      "name": "GPU & Game Shader Caches",
+      "description": "Compiled DirectX, NVIDIA DXCache/GLCache, AMD DxCache, Steam, and Epic Games Launcher web/shader caches.",
+      "category": "ShaderAndGameCache",
+      "safety": "Safe",
+      "dir_name_matches": ["dxcache", "glcache", "shadercache", "d3dscache", "nv_cache", "webcache_4430"],
+      "path_substrings": ["/nvidia/dxcache", "/nvidia/glcache", "/amd/dxcache", "/d3dscache", "/steamapps/shadercache", "/epicgameslauncher/saved/webcache"],
+      "extensions": [],
+      "min_size_bytes": 0,
+      "default_selected": true
+    },
+    {
+      "id": "system_temp",
+      "name": "Temporary & Scratch Files",
+      "description": "OS and application temporary files (.tmp, .temp, .bak, Python __pycache__) left behind after installs or crashes.",
+      "category": "SystemTemp",
+      "safety": "Safe",
+      "dir_name_matches": ["temp", "tmp", "__pycache__"],
+      "path_substrings": ["/appdata/local/temp", "/windows/temp", "/inetcache"],
+      "extensions": [".tmp", ".temp", ".bak", ".old", ".chk"],
+      "min_size_bytes": 0,
+      "default_selected": true
+    },
+    {
+      "id": "logs_crash_dumps",
+      "name": "Application Logs & Crash Dumps",
+      "description": "Diagnostic .log files, Windows Error Reporting (.dmp, .hdmp, .mdmp) crash dumps, and rotated trace files.",
+      "category": "LogsAndCrashDumps",
+      "safety": "Safe",
+      "dir_name_matches": ["crashdumps", "crashpad", "minidump", "reportarchive"],
+      "path_substrings": ["/microsoft/windows/wer/", "/crashdumps"],
+      "extensions": [".dmp", ".mdmp", ".hdmp", ".log", ".etl"],
+      "min_size_bytes": 1024,
+      "default_selected": true
+    },
+    {
+      "id": "ai_model_caches",
+      "name": "Local AI & ML Model Caches",
+      "description": "Large cached model weights and temporary inference blobs from Hugging Face Hub, Ollama, LM Studio, and ComfyUI.",
+      "category": "DeveloperArtifacts",
+      "safety": "Review",
+      "dir_name_matches": ["huggingface", "hub", "torch_extensions", "triton", "whisper"],
+      "path_substrings": ["/.cache/huggingface/hub", "/.ollama/models/blobs", "/.cache/lm-studio", "/comfyui/temp"],
+      "extensions": [".gguf.part", ".safetensors.tmp"],
+      "min_size_bytes": 0,
+      "default_selected": false
+    },
+    {
+      "id": "dev_artifacts",
+      "name": "Developer Caches & Build Artifacts",
+      "description": "Reproducible dependency caches and build directories (node_modules, .gradle, .pytest_cache, pip/npm/pnpm/cargo caches).",
+      "category": "DeveloperArtifacts",
+      "safety": "Review",
+      "dir_name_matches": ["node_modules", ".pytest_cache", ".mypy_cache", ".ruff_cache", ".parcel-cache", ".turbo", ".next", "npm-cache", "pip-cache", ".gradle"],
+      "path_substrings": ["/npm-cache", "/pnpm-store", "/yarn/cache", "/pip/cache", "/.cargo/registry/cache"],
+      "extensions": [".pyc", ".pyo", ".o", ".obj"],
+      "min_size_bytes": 0,
+      "default_selected": false
+    },
+    {
+      "id": "installer_leftovers",
+      "name": "Installer & Package Leftovers",
+      "description": "Cached setup packages (.msi, .msp, .msu, .cab) and extracted update bundles no longer needed after installation.",
+      "category": "InstallerLeftovers",
+      "safety": "Review",
+      "dir_name_matches": ["package cache", "downloaded installations", "softwaredistribution"],
+      "path_substrings": ["/softwaredistribution/download", "/package cache"],
+      "extensions": [".msi", ".msp", ".cab", ".msu"],
+      "min_size_bytes": 65536,
+      "default_selected": false
+    },
+    {
+      "id": "orphaned_appdata",
+      "name": "Stale Telemetry & Update Caches",
+      "description": "Accumulated updater staging folders, Squirrel/Electron updater payloads, and pending update queues.",
+      "category": "OrphanedAppData",
+      "safety": "Review",
+      "dir_name_matches": ["squirreltemp", "pendingupdates", "telemetry"],
+      "path_substrings": ["/appdata/local/squirreltemp"],
+      "extensions": [".nupkg"],
+      "min_size_bytes": 0,
+      "default_selected": false
+    }
+  ]
+}
