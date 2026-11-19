@@ -63,3 +63,6 @@ enable_testing()
 add_executable(reclaim_tests tests/test_suite.cpp)
 target_link_libraries(reclaim_tests PRIVATE reclaim_core)
 add_test(NAME reclaim_unit_integration COMMAND reclaim_tests)
+set_tests_properties(reclaim_unit_integration PROPERTIES
+    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+)

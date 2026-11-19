@@ -261,6 +261,9 @@ RECLAIM_TEST(JsonParserValidAndMalformedInputs) {
 
 RECLAIM_TEST(ExternalRulesJsonRoundTripAndAiCacheMatch) {
     auto loaded_assets = reclaim::load_rules_from_json_file("assets/rules.json");
+    if (!loaded_assets.ok()) {
+        loaded_assets = reclaim::load_rules_from_json_file("../assets/rules.json");
+    }
     EXPECT_TRUE(loaded_assets.ok());
     EXPECT_TRUE(loaded_assets.value().size() >= 8);
 
