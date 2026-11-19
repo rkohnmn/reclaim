@@ -20,4 +20,5 @@ Thumbs.db
 # Generated test outputs
 *.tmp
 *.manifest
+!src/win32/*.manifest
 reclaim_audit_report.html
